@@ -1,28 +1,23 @@
-import React from "react";
-import pressStaticAssetHref from "./press.html?url";
+import React from 'react';
 
-const structuredDataObject = {
+const structuredData = `{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
       "@id": "https://piffmarti.com/#website",
       "url": "https://piffmarti.com",
-      "name": "Piff Marti \u2014 Official Site",
+      "name": "Piff Marti — Official Site",
       "inLanguage": "en",
-      "publisher": {
-        "@id": "https://piffmarti.com/#org"
-      }
+      "publisher": { "@id": "https://piffmarti.com/#org" }
     },
     {
       "@type": "WebPage",
       "@id": "https://piffmarti.com/press/",
       "url": "https://piffmarti.com/press/",
-      "name": "Who is Piff Marti? \u2014 Official Press Page",
+      "name": "Who is Piff Marti? — Official Press Page",
       "inLanguage": "en",
-      "isPartOf": {
-        "@id": "https://piffmarti.com/#website"
-      },
+      "isPartOf": { "@id": "https://piffmarti.com/#website" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "@id": "https://piffmarti.com/assets/press-og.jpg",
@@ -30,32 +25,16 @@ const structuredDataObject = {
         "width": 1200,
         "height": 630
       },
-      "breadcrumb": {
-        "@id": "https://piffmarti.com/press/#breadcrumb"
-      },
-      "about": {
-        "@id": "https://piffmarti.com/#artist"
-      },
-      "mainEntity": {
-        "@id": "https://piffmarti.com/press/#article"
-      }
+      "breadcrumb": { "@id": "https://piffmarti.com/press/#breadcrumb" },
+      "about": { "@id": "https://piffmarti.com/#artist" },
+      "mainEntity": { "@id": "https://piffmarti.com/press/#article" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://piffmarti.com/press/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://piffmarti.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Press",
-          "item": "https://piffmarti.com/press/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://piffmarti.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Press", "item": "https://piffmarti.com/press/" }
       ]
     },
     {
@@ -76,22 +55,15 @@ const structuredDataObject = {
       "name": "Shaquille Edwards",
       "description": "Real name of artist Piff Marti",
       "url": "https://piffmarti.com/about/",
-      "worksFor": {
-        "@id": "https://piffmarti.com/#artist"
-      }
+      "worksFor": { "@id": "https://piffmarti.com/#artist" }
     },
     {
       "@type": "MusicGroup",
       "@id": "https://piffmarti.com/#artist",
       "name": "Piff Marti",
       "url": "https://piffmarti.com",
-      "genre": [
-        "Hip-Hop",
-        "Rap"
-      ],
-      "member": {
-        "@id": "https://piffmarti.com/#person"
-      },
+      "genre": ["Hip-Hop", "Rap"],
+      "member": { "@id": "https://piffmarti.com/#person" },
       "sameAs": [
         "https://open.spotify.com/artist/4yJPiziKjwvjKUnsnsOixM",
         "https://instagram.com/piffmarti",
@@ -99,32 +71,16 @@ const structuredDataObject = {
         "https://www.youtube.com/@piffmartiTV"
       ],
       "mentions": [
-        {
-          "@id": "https://piffmarti.com/#artist-drake"
-        },
-        {
-          "@id": "https://piffmarti.com/#artist-centralcee"
-        },
-        {
-          "@id": "https://piffmarti.com/#artist-dave"
-        },
-        {
-          "@id": "https://piffmarti.com/#artist-kendrick"
-        },
-        {
-          "@id": "https://piffmarti.com/#artist-babykeem"
-        }
+        { "@id": "https://piffmarti.com/#artist-drake" },
+        { "@id": "https://piffmarti.com/#artist-centralcee" },
+        { "@id": "https://piffmarti.com/#artist-dave" },
+        { "@id": "https://piffmarti.com/#artist-kendrick" },
+        { "@id": "https://piffmarti.com/#artist-babykeem" }
       ],
-      "isPartOf": {
-        "@id": "https://piffmarti.com/#website"
-      },
+      "isPartOf": { "@id": "https://piffmarti.com/#website" },
       "hasPart": [
-        {
-          "@id": "https://piffmarti.com/music/#track-bounce"
-        },
-        {
-          "@id": "https://piffmarti.com/music/#track-fade"
-        }
+        { "@id": "https://piffmarti.com/music/#track-bounce" },
+        { "@id": "https://piffmarti.com/music/#track-fade" }
       ]
     },
     {
@@ -176,27 +132,17 @@ const structuredDataObject = {
       "@type": "NewsArticle",
       "@id": "https://piffmarti.com/press/#article",
       "headline": "Piff: Redefining Rap in the Age of Authenticity",
-      "description": "Official press feature on Piff Marti \u2014 a Bronx/Harlem rapper of Jamaican heritage who blends vulnerability with uptempo bounce under the Stay Dangerous philosophy.",
+      "description": "Official press feature on Piff Marti — a Bronx/Harlem rapper of Jamaican heritage who blends vulnerability with uptempo bounce under the Stay Dangerous philosophy.",
       "inLanguage": "en",
       "datePublished": "2025-10-02",
       "dateModified": "2025-10-02",
       "articleSection": "Press Feature",
       "wordCount": 1480,
-      "mainEntityOfPage": {
-        "@id": "https://piffmarti.com/press/"
-      },
-      "image": {
-        "@id": "https://piffmarti.com/assets/press-og.jpg"
-      },
-      "publisher": {
-        "@id": "https://piffmarti.com/#org"
-      },
-      "author": {
-        "@id": "https://piffmarti.com/#person"
-      },
-      "about": {
-        "@id": "https://piffmarti.com/#artist"
-      }
+      "mainEntityOfPage": { "@id": "https://piffmarti.com/press/" },
+      "image": { "@id": "https://piffmarti.com/assets/press-og.jpg" },
+      "publisher": { "@id": "https://piffmarti.com/#org" },
+      "author": { "@id": "https://piffmarti.com/#person" },
+      "about": { "@id": "https://piffmarti.com/#artist" }
     },
     {
       "@type": "FAQPage",
@@ -208,7 +154,7 @@ const structuredDataObject = {
           "name": "Who is Piff Marti?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Piff Marti \u2014 real name Shaquille Edwards \u2014 is a Bronx- and Harlem-raised rapper of Jamaican heritage who blends raw vulnerability with uptempo bounce under the Stay Dangerous philosophy."
+            "text": "Piff Marti — real name Shaquille Edwards — is a Bronx- and Harlem-raised rapper of Jamaican heritage who blends raw vulnerability with uptempo bounce under the Stay Dangerous philosophy."
           }
         },
         {
@@ -224,7 +170,7 @@ const structuredDataObject = {
           "name": "What is unique about Piff Marti's style?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A fusion of Bronx urgency, Harlem style, and Jamaican rhythm \u2014 serious truth with party energy \u2014 turning pain into movement."
+            "text": "A fusion of Bronx urgency, Harlem style, and Jamaican rhythm — serious truth with party energy — turning pain into movement."
           }
         },
         {
@@ -250,13 +196,8 @@ const structuredDataObject = {
       "@id": "https://piffmarti.com/music/#track-bounce",
       "name": "Bounce",
       "url": "https://open.spotify.com/track/0YWmeJtd7Fp1tH3978qUIH",
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "Single"
-      },
-      "byArtist": {
-        "@id": "https://piffmarti.com/#artist"
-      },
+      "inAlbum": { "@type": "MusicAlbum", "name": "Single" },
+      "byArtist": { "@id": "https://piffmarti.com/#artist" },
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -266,12 +207,8 @@ const structuredDataObject = {
               "@type": "MusicRecording",
               "name": "Which One",
               "byArtist": [
-                {
-                  "@id": "https://piffmarti.com/#artist-drake"
-                },
-                {
-                  "@id": "https://piffmarti.com/#artist-centralcee"
-                }
+                { "@id": "https://piffmarti.com/#artist-drake" },
+                { "@id": "https://piffmarti.com/#artist-centralcee" }
               ],
               "url": "https://open.spotify.com/track/5n0PLpUkqH3W5vBIpdPJKt"
             },
@@ -279,12 +216,8 @@ const structuredDataObject = {
               "@type": "MusicRecording",
               "name": "Sprinter",
               "byArtist": [
-                {
-                  "@id": "https://piffmarti.com/#artist-centralcee"
-                },
-                {
-                  "@id": "https://piffmarti.com/#artist-dave"
-                }
+                { "@id": "https://piffmarti.com/#artist-centralcee" },
+                { "@id": "https://piffmarti.com/#artist-dave" }
               ],
               "url": "https://open.spotify.com/track/3TGRt1STbuVJQp5yJ1zgEg"
             }
@@ -296,22 +229,15 @@ const structuredDataObject = {
           "value": "https://piffmarti.com/press/audio.json"
         }
       ],
-      "mainEntityOfPage": {
-        "@id": "https://piffmarti.com/press/"
-      }
+      "mainEntityOfPage": { "@id": "https://piffmarti.com/press/" }
     },
     {
       "@type": "MusicRecording",
       "@id": "https://piffmarti.com/music/#track-fade",
       "name": "Fade",
       "url": "https://open.spotify.com/track/13SZbybWQRfwcZUGLVxVoA",
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "Single"
-      },
-      "byArtist": {
-        "@id": "https://piffmarti.com/#artist"
-      },
+      "inAlbum": { "@type": "MusicAlbum", "name": "Single" },
+      "byArtist": { "@id": "https://piffmarti.com/#artist" },
       "additionalProperty": [
         {
           "@type": "PropertyValue",
@@ -320,21 +246,15 @@ const structuredDataObject = {
             {
               "@type": "MusicRecording",
               "name": "Peekaboo",
-              "byArtist": {
-                "@id": "https://piffmarti.com/#artist-kendrick"
-              },
+              "byArtist": { "@id": "https://piffmarti.com/#artist-kendrick" },
               "url": "https://open.spotify.com/track/4QZXpsC1NshqsK6h28F99G"
             },
             {
               "@type": "MusicRecording",
               "name": "Family Ties",
               "byArtist": [
-                {
-                  "@id": "https://piffmarti.com/#artist-kendrick"
-                },
-                {
-                  "@id": "https://piffmarti.com/#artist-babykeem"
-                }
+                { "@id": "https://piffmarti.com/#artist-kendrick" },
+                { "@id": "https://piffmarti.com/#artist-babykeem" }
               ],
               "url": "https://open.spotify.com/track/4FMY7OkJAPK5V7gXJRnYoP"
             }
@@ -346,31 +266,23 @@ const structuredDataObject = {
           "value": "https://piffmarti.com/press/audio.json"
         }
       ],
-      "mainEntityOfPage": {
-        "@id": "https://piffmarti.com/press/"
-      }
+      "mainEntityOfPage": { "@id": "https://piffmarti.com/press/" }
     },
     {
       "@type": "MusicPlaylist",
       "@id": "https://piffmarti.com/music/#playlist-bounce-context",
-      "name": "Bounce \u2014 Context & Similar Energy",
+      "name": "Bounce — Context & Similar Energy",
       "description": "A contextual playlist grouping Piff Marti's Bounce with adjacent records for energy and feel.",
       "numTracks": 3,
       "url": "https://open.spotify.com/playlist/YOUR_PLAYLIST_ID",
       "track": [
-        {
-          "@id": "https://piffmarti.com/music/#track-bounce"
-        },
+        { "@id": "https://piffmarti.com/music/#track-bounce" },
         {
           "@type": "MusicRecording",
           "name": "Which One",
           "byArtist": [
-            {
-              "@id": "https://piffmarti.com/#artist-drake"
-            },
-            {
-              "@id": "https://piffmarti.com/#artist-centralcee"
-            }
+            { "@id": "https://piffmarti.com/#artist-drake" },
+            { "@id": "https://piffmarti.com/#artist-centralcee" }
           ],
           "url": "https://open.spotify.com/track/5n0PLpUkqH3W5vBIpdPJKt"
         },
@@ -378,14 +290,104 @@ const structuredDataObject = {
           "@type": "MusicRecording",
           "name": "Sprinter",
           "byArtist": [
-            {
-              "@id": "https://piffmarti.com/#artist-centralcee"
-            },
-            {
-              "@id": "https://piffmarti.com/#artist-dave"
-            }
+            { "@id": "https://piffmarti.com/#artist-centralcee" },
+            { "@id": "https://piffmarti.com/#artist-dave" }
           ],
           "url": "https://open.spotify.com/track/3TGRt1STbuVJQp5yJ1zgEg"
+        }
+      ],
+      "mainEntityOfPage": { "@id": "https://piffmarti.com/press/" }
+    },
+    {
+      "@type": "MusicPlaylist",
+      "@id": "https://piffmarti.com/music/#playlist-fade-context",
+      "name": "Fade — Context & Similar Energy",
+      "description": "A contextual playlist grouping Piff Marti's Fade with adjacent records for intensity and tone.",
+      "numTracks": 3,
+      "url": "https://open.spotify.com/playlist/YOUR_PLAYLIST_ID",
+      "track": [
+        { "@id": "https://piffmarti.com/music/#track-fade" },
+        {
+          "@type": "MusicRecording",
+          "name": "Peekaboo",
+          "byArtist": { "@id": "https://piffmarti.com/#artist-kendrick" },
+          "url": "https://open.spotify.com/track/4QZXpsC1NshqsK6h28F99G"
+        },
+        {
+          "@type": "MusicRecording",
+          "name": "Family Ties",
+          "byArtist": [
+            { "@id": "https://piffmarti.com/#artist-kendrick" },
+            { "@id": "https://piffmarti.com/#artist-babykeem" }
+          ],
+          "url": "https://open.spotify.com/track/4FMY7OkJAPK5V7gXJRnYoP"
+        }
+      ],
+      "mainEntityOfPage": { "@id": "https://piffmarti.com/press/" }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://piffmarti.com/press/#audio-dataset",
+      "name": "Piff Marti — Audio Feature Comparisons",
+      "description": "Feature vectors and similarity comparisons between Piff Marti tracks and reference tracks.",
+      "creator": { "@id": "https://piffmarti.com/#artist" },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "inLanguage": "en",
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://piffmarti.com/press/audio.json"
+      }
+    }
+  ]
+}`;
+
+export default function Press() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: structuredData }}
+      />
+
+      <style>{`
+        :root { --maxw: 860px; --accent: #ff0000; }
+        .press-page-body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #000; color: #fff; }
+        .press-page-main { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 64px; }
+        .press-page-main header h1 { font-family: "Archivo Black", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 2.25rem; line-height: 1.2; margin: 12px 0 6px; color: var(--accent); }
+        .press-page-main header .dek { color:#c7c7c7; margin: 0 0 16px; font-size: 1.05rem; }
+        .press-page-main article h2 { font-size: 1.25rem; margin: 28px 0 12px; color: #fff; }
+        .press-page-main article p { line-height: 1.75; margin: 0 0 16px; color:#e9e9e9; }
+        .press-page-main .rule { border: 0; height: 1px; background: linear-gradient(90deg, rgba(255,0,0,.4), rgba(255,0,0,.05)); margin: 26px 0; }
+        .press-page-main .breadcrumbs { font-size:.9rem; color:#f2e7b1; }
+        .press-page-main .breadcrumbs a { color:#9a9a9a; text-decoration:none; }
+        .press-page-main .breadcrumbs a:hover { color:#fff; text-decoration:underline; }
+
+        .photo-embed { margin: 32px 0; text-align: center; }
+        .video-container--vertical {
+          position: relative;
+          padding-bottom: 177.78%;
+          height: 0;
+          overflow: hidden;
+          max-width: 360px;
+          margin: 0 auto;
+          border-radius: 8px;
+        }
+        .video-container--vertical iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+        .photo-caption { color: #8a8a8a; font-size: 0.9rem; margin-top: 8px; font-style: italic; }
+
+        .photo-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 16px;
+          margin: 32px 0;
         }
       ],
       "mainEntityOfPage": {
@@ -470,15 +472,19 @@ const baseStyles = `
   margin: 0 auto;
 }
 
-.press-static__breadcrumbs {
-  display: flex;
-  gap: 6px;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  color: #f2e7b1;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
+          {/* === PHOTO EMBED === */}
+          {/* To change the image, replace the `src` URL below with a link to your photo. */}
+          <div className="my-8">
+            <img
+              src="https://i.imgur.com/2TEDDq0.jpg"
+              alt="Piff Marti performing at Rock The Daisies Festival in South Africa"
+              className="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-xl mx-auto"
+            />
+            <p className="photo-caption text-center mt-2">
+              Piff Marti performing at Rock The Daisies Festival in South Africa
+            </p>
+          </div>
+          {/* === END PHOTO EMBED === */}
 
 .press-static__breadcrumbs a {
   color: #d1d1d1;
