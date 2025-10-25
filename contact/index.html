@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Piff Marti — Contact</title>
+    <meta
+      name="description"
+      content="Connect with the Stay Dangerous team for press, bookings, and collaborations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #000;
+        color: #ff4d4d;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      header {
+        position: fixed;
+        top: 24px;
+        left: 24px;
+        z-index: 2;
+      }
+
+      .brand {
+        font-family: 'Archivo Black', Impact, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.4rem;
+        letter-spacing: 0.28em;
+        text-decoration: none;
+        color: #ff4d4d;
+      }
+
+      .contact {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        padding: 0 1.5rem;
+      }
+
+      .contact video,
+      .contact::after {
+        position: absolute;
+        inset: 0;
+      }
+
+      .contact video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .contact::after {
+        content: '';
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      .contact__panel {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-family: 'Archivo Black', Impact, 'Arial Narrow Bold', sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        letter-spacing: 0.08em;
+        color: #ff4d4d;
+      }
+
+      .contact__link {
+        color: #ff4d4d;
+        text-decoration: none;
+        transition: color 0.25s ease;
+      }
+
+      .contact__link:hover,
+      .contact__link:focus {
+        color: #ffffff;
+      }
+
+      .back-link {
+        margin-top: 2rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 211, 211, 0.85);
+        text-decoration: none;
+      }
+
+      .back-link::before {
+        content: '←';
+        font-size: 1.5rem;
+      }
+
+      .back-link:hover,
+      .back-link:focus {
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/">PIFFMARTI</a>
+    </header>
+
+    <main class="contact">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&h=1080&fit=crop&q=80"
+      >
+        <source src="https://videos.pexels.com/video-files/7573670/7573670-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="contact__panel" aria-label="Contact methods">
+        <a class="contact__link" href="https://instagram.com/piffmarti" target="_blank" rel="noopener noreferrer">
+          Instagram
+        </a>
+        <a class="contact__link" href="mailto:mgmt@piffmarti.com">Email</a>
+        <a class="back-link" href="/">Home</a>
+      </div>
+    </main>
+  </body>
+</html>
