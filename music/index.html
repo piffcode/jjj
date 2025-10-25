@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Piff Marti — Music</title>
+    <meta
+      name="description"
+      content="Stream Piff Marti across every platform and explore the Stay Dangerous discography."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #000;
+        color: #ff4d4d;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.92);
+        border-bottom: 1px solid rgba(255, 77, 77, 0.25);
+        backdrop-filter: blur(12px);
+      }
+
+      .masthead {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .brand {
+        font-family: 'Archivo Black', Impact, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 0.28em;
+        color: #ff4d4d;
+        font-size: 1.1rem;
+        text-decoration: none;
+      }
+
+      .nav {
+        display: flex;
+        gap: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 0.82rem;
+      }
+
+      .nav a {
+        color: rgba(255, 77, 77, 0.85);
+        text-decoration: none;
+      }
+
+      .nav a:hover,
+      .nav a:focus {
+        color: #ffffff;
+      }
+
+      .hero {
+        position: relative;
+        height: min(60vh, 520px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .hero img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.45;
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3), #000);
+      }
+
+      .hero__content {
+        position: relative;
+        z-index: 1;
+        padding: 0 1.5rem;
+      }
+
+      .hero__icon {
+        font-size: 3.5rem;
+        color: #ff4d4d;
+      }
+
+      .hero__title {
+        margin: 18px 0 12px;
+        font-family: 'Archivo Black', Impact, 'Arial Narrow Bold', sans-serif;
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
+        letter-spacing: 0.16em;
+        color: #fdf5d3;
+      }
+
+      .hero__subtitle {
+        margin: 0;
+        font-size: 1.3rem;
+        letter-spacing: 0.12em;
+        color: rgba(255, 211, 211, 0.85);
+      }
+
+      .section {
+        padding: 72px 24px;
+      }
+
+      .section--dark {
+        background: #000;
+      }
+
+      .section--ink {
+        background: #111114;
+      }
+
+      .section__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .tracks {
+        display: grid;
+        gap: 28px;
+      }
+
+      @media (min-width: 720px) {
+        .tracks {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .track-card {
+        border-radius: 20px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 77, 77, 0.28);
+        display: grid;
+        grid-template-rows: 1fr auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .track-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 48px rgba(255, 77, 77, 0.18);
+      }
+
+      .track-card__media {
+        position: relative;
+        padding-top: 100%;
+        overflow: hidden;
+      }
+
+      .track-card__media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .track-card:hover .track-card__media img {
+        transform: scale(1.05);
+      }
+
+      .track-card__content {
+        padding: 24px;
+        color: #fff;
+      }
+
+      .track-card__title {
+        margin: 0 0 6px;
+        font-size: 1.6rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .track-card__meta {
+        margin: 0 0 18px;
+        color: rgba(255, 186, 186, 0.85);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+
+      .track-card__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        color: #fff;
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+
+      .track-card__cta span:last-child::after {
+        content: '→';
+        margin-left: 6px;
+      }
+
+      .platforms {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+
+      .platforms__card {
+        border-radius: 16px;
+        border: 1px solid rgba(255, 77, 77, 0.3);
+        padding: 24px;
+        text-align: center;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.04);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        transition: transform 0.25s ease, background 0.25s ease;
+      }
+
+      .platforms__card:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 77, 77, 0.3);
+      }
+
+      .cta-banner {
+        margin-top: 48px;
+        text-align: center;
+      }
+
+      .cta-banner a {
+        display: inline-block;
+        padding: 16px 42px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+        color: #000;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      footer {
+        padding: 36px 24px 60px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.65);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="masthead">
+        <a class="brand" href="/">PIFFMARTI</a>
+        <nav class="nav" aria-label="Site">
+          <a href="/press/">Press</a>
+          <a href="/music/" aria-current="page">Music</a>
+          <a href="/contact/">Contact</a>
+          <a href="https://hypeddit.com/piffmartimerlakura/bounce" target="_blank" rel="noopener noreferrer">Listen</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1920&h=1080&fit=crop" alt="Studio lights" />
+        <div class="hero__content">
+          <div class="hero__icon" aria-hidden="true">🎧</div>
+          <h1 class="hero__title">Music</h1>
+          <p class="hero__subtitle">LISTEN TO THE SOUND OF THE STREETS</p>
+        </div>
+      </section>
+
+      <section class="section section--dark" aria-labelledby="tracks-heading">
+        <div class="section__inner">
+          <h2 id="tracks-heading" class="hero__subtitle" style="text-align: center; margin-bottom: 36px;">New + Notable</h2>
+          <div class="tracks">
+            <article class="track-card">
+              <div class="track-card__media">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=800&fit=crop" alt="Abstract red studio lights" />
+              </div>
+              <div class="track-card__content">
+                <h3 class="track-card__title">Bounce</h3>
+                <p class="track-card__meta">Latest Single</p>
+                <a class="track-card__cta" href="https://hypeddit.com/piffmartimerlakura/bounce" target="_blank" rel="noopener noreferrer">
+                  <span>Listen Now</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="track-card">
+              <div class="track-card__media">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&h=800&fit=crop" alt="DJ mixing board" />
+              </div>
+              <div class="track-card__content">
+                <h3 class="track-card__title">Urban Nights</h3>
+                <p class="track-card__meta">Coming Soon</p>
+                <a class="track-card__cta" href="#">
+                  <span>Stay Tuned</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="track-card">
+              <div class="track-card__media">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&h=800&fit=crop" alt="Concert crowd" />
+              </div>
+              <div class="track-card__content">
+                <h3 class="track-card__title">Street Symphony</h3>
+                <p class="track-card__meta">Album</p>
+                <a class="track-card__cta" href="#">
+                  <span>Coming Soon</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="track-card">
+              <div class="track-card__media">
+                <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=800&fit=crop" alt="Recording studio" />
+              </div>
+              <div class="track-card__content">
+                <h3 class="track-card__title">Midnight Sessions</h3>
+                <p class="track-card__meta">EP</p>
+                <a class="track-card__cta" href="#">
+                  <span>Coming Soon</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink" aria-labelledby="platforms-heading">
+        <div class="section__inner">
+          <h2 id="platforms-heading" class="hero__subtitle" style="text-align: center; margin-bottom: 36px;">Available On Every Platform</h2>
+          <div class="platforms">
+            <div class="platforms__card">Spotify</div>
+            <div class="platforms__card">Apple Music</div>
+            <div class="platforms__card">SoundCloud</div>
+            <div class="platforms__card">YouTube</div>
+          </div>
+          <div class="cta-banner">
+            <a href="https://hypeddit.com/piffmartimerlakura/bounce" target="_blank" rel="noopener noreferrer">Listen to "Bounce"</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 Stay Dangerous Productions LLC</footer>
+  </body>
+</html>
